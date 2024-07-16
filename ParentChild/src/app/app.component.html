@@ -1,0 +1,17 @@
+<app-home></app-home>
+<div>
+  <div class="container mt-4">
+      <div class="card">
+          <div class="card-header">
+              <h4>Child Component to Parent</h4>
+          </div>
+          <!-- <div class="card-body">
+              Pass Data: <input type="text" class="form-control mt-2" [(ngModel)]="data"/>
+              <button class="btn btn-primary mt-3" value="send" (click)="transferData()">Send</button>
+          </div> -->
+          <div class="card-body">
+              <app-about (sendData)="handleEvent($event)"></app-about>
+          </div>
+      </div>
+  </div>
+</div>

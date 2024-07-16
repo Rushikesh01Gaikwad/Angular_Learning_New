@@ -1,0 +1,49 @@
+<div class="container mt-3">
+    <h3>Add/Update Product</h3>
+  <form>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" id="title" class="form-control" [(ngModel)]="product.title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" class="form-control" [(ngModel)]="product.price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" id="category" class="form-control" [(ngModel)]="product.category" name="category">
+    </div>
+    <button type="button" (click)="addProduct()" class="btn btn-success mt-2">Add Product</button>
+    <!-- <button type="button" (click)="updateProduct()" class="btn btn-warning mt-2 mx-3">Update Product</button> -->
+  </form>
+
+  <h3>Delete Product</h3>
+  <form>
+    <div class="form-group">
+      <label for="deleteName">Product Name:</label>
+      <input type="text" id="deleteName" class="form-control" [(ngModel)]="deleteName" name="deleteName">
+    </div>
+    <button type="button" (click)="deleteProduct()" class="btn btn-danger mt-2">Delete Product</button>
+  </form>
+</div>
+<div class="container mt-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Price</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of users; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

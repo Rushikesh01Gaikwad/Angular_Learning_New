@@ -1,0 +1,23 @@
+<h3>Template driven</h3>
+<div class="container mt-5">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required #usernameInput="ngModel">
+      <div *ngIf="usernameInput.invalid && (usernameInput.touched || usernameInput.dirty)">
+        Username is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required #passwordInput="ngModel">
+      <div *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)">
+        Password is required.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+  </form>
+  <button type="submit" class="btn btn-primary mt-5" (click)="reactForm()">Go to Reactive_form</button>
+
+</div>
+  

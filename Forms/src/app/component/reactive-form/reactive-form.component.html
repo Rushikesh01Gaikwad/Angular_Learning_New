@@ -1,0 +1,34 @@
+<h3>Reactive form</h3>
+<div class="container mt-5">
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input id="name" formControlName="name" class="form-control" [ngClass]="{'is-invalid': registrationForm.controls['name'].invalid && (registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched)}">
+        <div *ngIf="registrationForm.controls['name'].invalid && (registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched)" class="invalid-feedback">
+          <small *ngIf="registrationForm.controls['name'].errors?.['required']">Name is required.</small>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input id="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid': registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)}">
+        <div *ngIf="registrationForm.controls['email'].invalid && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)" class="invalid-feedback">
+          <small *ngIf="registrationForm.controls['email'].errors?.['required']">Email is required.</small>
+          <small *ngIf="registrationForm.controls['email'].errors?.['email']">Invalid email.</small>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{'is-invalid': registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)}">
+        <div *ngIf="registrationForm.controls['password'].invalid && (registrationForm.controls['password'].dirty || registrationForm.controls['password'].touched)" class="invalid-feedback">
+          <small *ngIf="registrationForm.controls['password'].errors?.['required']">Password is required.</small>
+          <small *ngIf="registrationForm.controls['password'].errors?.['minlength']">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Submit</button>
+    </form>
+    <button type="submit" class="btn btn-primary mt-5" (click)="reactForm()">Go to Template_Form</button>
+  </div>
+  

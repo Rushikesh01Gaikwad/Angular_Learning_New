@@ -1,0 +1,13 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Counter App</h5>
+          <p class="card-text d-flex justify-content-center">{{ count$ | async }}</p>
+          <div class="d-flex justify-content-evenly">
+            <button class="btn btn-primary" (click)="increment()">Increment</button>
+            <button class="btn btn-secondary" (click)="reset()">Reset</button>
+            <button class="btn btn-primary" (click)="decrement()">Decrement</button>
+          </div>
+        </div>
+      </div>
+</div>

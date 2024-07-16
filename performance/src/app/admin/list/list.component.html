@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<h3>here used the json server</h3>
+<div class="container mt-3">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Price</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of fetched_data; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.title }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
